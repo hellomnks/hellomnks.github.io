@@ -1,4 +1,4 @@
-/* General Reset for Consistency */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,67 +7,88 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif; /* Default font */
-    color: #000000; /* Dark text color */
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #1a1a1a; /* Dark background */
     line-height: 1.6;
     padding: 20px;
-
-    /* Background Pattern */
-    background: repeating-linear-gradient(
-        45deg,             /* Angle of the stripes */
-        #000000,           /* Start of black stripe */
-        #000000 2px,       /* Width of black stripe */
-        #ffe0e0 1px,       /* Start of light gray stripe */
-        #ffe0e0 1px        /* Width of light gray stripe */
-    );
-    background-attachment: fixed; /* Keeps the pattern fixed while scrolling */
 }
 
 /* Header Styling */
 header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 30px;
 }
 
 header h1 {
-    font-family: 'Georgia', serif; /* Different font for the header */
-    font-size: 2.5em;
-    color: #0077cc; /* Blue color for the header text */
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
 header p {
     font-size: 1.2em;
-    color: #555;
+    margin-top: 10px;
+    color: #ccc;
 }
 
-/* Navigation Bar */
+/* Navigation Styling */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
 nav ul {
-    display: flex;
-    flex-direction: column; /* Aligns items vertically */
-    align-items: flex-start; /* Aligns items to the left */
     list-style: none;
-    margin-bottom: 20px;
-}
-
-nav li {
-    margin: 0 15px;
+    display: inline-flex;
+    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
-    color: #0077cc; /* Blue link color */
+    color: #fff;
+    font-size: 1.1em;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 nav a:hover {
-    color: #005fa3; /* Darker blue on hover */
+    color: #000;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact p {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+#contact a {
+    color: #6eb5ff; /* Light blue link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #fff;
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    padding: 10px 0;
     font-size: 0.9em;
-    color: #888;
-    border-top: 1px solid #ccc; /* Optional separator */
+    color: #aaa;
+    border-top: 1px solid #333;
 }

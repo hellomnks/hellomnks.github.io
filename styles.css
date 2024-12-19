@@ -16,11 +16,11 @@ body {
     background: repeating-linear-gradient(
         45deg,             /* Angle of the stripes */
         #000000,           /* Start of black stripe */
-        #000000 5px,       /* Width of black stripe */
-        #f5f5f5 5px,       /* Start of light gray stripe */
-        #f5f5f5 10px       /* Width of light gray stripe */
+        #000000 2px,       /* Width of black stripe */
+        #f5f5f5 2px,       /* Start of light gray stripe */
+        #f5f5f5 4px        /* Width of light gray stripe */
     );
-    background-attachment: scroll; /* Keeps the pattern fixed while scrolling */
+    background-attachment: fixed; /* Keeps the pattern fixed while scrolling */
 }
 
 /* Header Styling */

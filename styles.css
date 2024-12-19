@@ -24,7 +24,7 @@ body {
 
 /* Header Styling */
 header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
 }
 
@@ -42,7 +42,8 @@ header p {
 /* Navigation Bar */
 nav ul {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Aligns items vertically */
+    align-items: flex-start; /* Aligns items to the left */
     list-style: none;
     margin-bottom: 20px;
 }

@@ -17,8 +17,8 @@ body {
         45deg,             /* Angle of the stripes */
         #000000,           /* Start of black stripe */
         #000000 2px,       /* Width of black stripe */
-        #f5f5f5 2px,       /* Start of light gray stripe */
-        #f5f5f5 4px        /* Width of light gray stripe */
+        #ffe0e0 1px,       /* Start of light gray stripe */
+        #ffe0e0 3px        /* Width of light gray stripe */
     );
     background-attachment: fixed; /* Keeps the pattern fixed while scrolling */
 }

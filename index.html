@@ -1,141 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>My Retro Portfolio</title>
-  <style>
-    /* Body & Overall Page */
-    body {
-      background-color: #F0F8FF;
-      font-family: "Comic Sans MS", cursive, sans-serif; /* A retro favorite */
-      margin: 0;
-      padding: 0;
-      color: #000080;
-    }
-    
-    /* Header Section */
-    header {
-      background-color: #87CEFA;
-      text-align: center;
-      padding: 20px 0;
-      border-bottom: 2px solid #000080;
-    }
-    
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-    
-    /* Marquee - a classic early 2000s touch! */
-    header marquee {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #000080;
-    }
-    
-    /* Navigation Menu */
-    nav {
-      background-color: #B0E0E6;
-      text-align: center;
-      padding: 10px 0;
-      margin-bottom: 20px;
-    }
-    
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000080;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    
-    nav a:hover {
-      text-decoration: underline;
-    }
-    
-    /* Section Styles */
-    section {
-      width: 80%;
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      padding: 0 10px;
-    }
-    
-    section h2 {
-      border-bottom: 2px dashed #000080;
-      padding-bottom: 5px;
-    }
-    
-    /* Projects Grid */
-    .projects-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    
-    .project {
-      border: 2px groove #000080; /* Retro frame style */
-      background-color: #fff;
-      padding: 10px;
-      text-align: center;
-      width: 220px;
-    }
-    
-    .project img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px auto;
-    }
-    
-    .project p {
-      margin: 0;
-      font-size: 14px;
-    }
-  </style>
+    <title>My Awesome Portfolio</title>
+    <style type="text/css">
+        body {
+            background: #f0f0f0 url('bg_tile.gif');
+            font-family: 'Comic Sans MS', Arial;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .title {
+            font-size: 36px;
+            color: #0066cc;
+            text-align: center;
+            text-shadow: 2px 2px #fff;
+        }
+        
+        .menu {
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            background: #fff;
+            border: 3px groove #ccc;
+        }
+        
+        .menu a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+        
+        .menu a:hover {
+            color: #cc0000;
+            text-decoration: underline;
+        }
+        
+        .content {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 3px groove #ccc;
+        }
+        
+        .project-frame {
+            border: 5px ridge #ccc;
+            padding: 5px;
+            background: #fff;
+            margin: 10px;
+            float: left;
+        }
+        
+        .project-frame img {
+            border: 1px solid #666;
+            width: 200px;
+            height: 150px;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+    <script type="text/javascript">
+        function showSection(sectionId) {
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-  <!-- Header with Title and Marquee -->
-  <header>
-    <h1>My Retro Portfolio</h1>
-    <marquee behavior="alternate" scrollamount="3">
-      Welcome to my early 2000s-inspired website!
-    </marquee>
-  </header>
-  
-  <!-- Navigation Menu -->
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-  </nav>
-  
-  <!-- About Me Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! I'm a retro enthusiast passionate about design, coding, and all things early 2000s.
-      This portfolio is a tribute to the nostalgic web aesthetics of that era.
-    </p>
-  </section>
-  
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
-      <!-- Project 1 -->
-      <div class="project">
-        <img src="project1.jpg" alt="Project 1 Screenshot">
-        <p>Project 1 Description</p>
-      </div>
-      <!-- Project 2 -->
-      <div class="project">
-        <img src="project2.jpg" alt="Project 2 Screenshot">
-        <p>Project 2 Description</p>
-      </div>
-      <!-- Add more projects as needed -->
+    <h1 class="title">~*~ Welcome to My Portfolio! ~*~</h1>
+    
+    <div class="menu">
+        <center>
+            <a href="#" onclick="showSection('about')">About Me</a> | 
+            <a href="#" onclick="showSection('projects')">My Projects</a> |
+            <a href="mailto:me@email.com">Contact</a>
+        </center>
     </div>
-  </section>
+
+    <div class="content" id="about" style="display:block;">
+        <h2><marquee>About Me!</marquee></h2>
+        <p>Hi! I'm a web developer passionate about creating awesome websites! Check out my projects below!</p>
+        <p>Visit my <a href="#">GeoCities page</a>!</p>
+        <img src="under_construction.gif" alt="Under Construction">
+    </div>
+
+    <div class="content" id="projects" style="display:none;">
+        <h2><span class="blink">★</span> My Projects <span class="blink">★</span></h2>
+        <center>
+            <div class="project-frame">
+                <img src="project1.jpg" alt="Project 1">
+                <p>Project 1</p>
+            </div>
+            
+            <div class="project-frame">
+                <img src="project2.jpg" alt="Project 2">
+                <p>Project 2</p>
+            </div>
+            
+            <div class="project-frame">
+                <img src="project3.jpg" alt="Project 3">
+                <p>Project 3</p>
+            </div>
+        </center>
+    </div>
+
+    <center>
+        <p>Best viewed in Netscape Navigator</p>
+        <img src="counter.gif" alt="Visitor Counter">
+    </center>
 </body>
 </html>
-

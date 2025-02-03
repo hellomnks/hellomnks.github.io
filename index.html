@@ -1,30 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿mnks?</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>My Retro Portfolio</title>
+  <style>
+    /* Body & Overall Page */
+    body {
+      background-color: #F0F8FF;
+      font-family: "Comic Sans MS", cursive, sans-serif; /* A retro favorite */
+      margin: 0;
+      padding: 0;
+      color: #000080;
+    }
+    
+    /* Header Section */
+    header {
+      background-color: #87CEFA;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #000080;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    
+    /* Marquee - a classic early 2000s touch! */
+    header marquee {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #000080;
+    }
+    
+    /* Navigation Menu */
+    nav {
+      background-color: #B0E0E6;
+      text-align: center;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+    
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000080;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Section Styles */
+    section {
+      width: 80%;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      padding: 0 10px;
+    }
+    
+    section h2 {
+      border-bottom: 2px dashed #000080;
+      padding-bottom: 5px;
+    }
+    
+    /* Projects Grid */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .project {
+      border: 2px groove #000080; /* Retro frame style */
+      background-color: #fff;
+      padding: 10px;
+      text-align: center;
+      width: 220px;
+    }
+    
+    .project img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+    
+    .project p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>¿mnks?</h1>
-        <p>selected work</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="contact">
-            <p>reach me at <a href="mailto:yourname@example.com">vjmonk203@gmail.com</a>.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 hello.mnks All Rights Reserved.</p>
-    </footer>
+  <!-- Header with Title and Marquee -->
+  <header>
+    <h1>My Retro Portfolio</h1>
+    <marquee behavior="alternate" scrollamount="3">
+      Welcome to my early 2000s-inspired website!
+    </marquee>
+  </header>
+  
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+  </nav>
+  
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm a retro enthusiast passionate about design, coding, and all things early 2000s.
+      This portfolio is a tribute to the nostalgic web aesthetics of that era.
+    </p>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project">
+        <img src="project1.jpg" alt="Project 1 Screenshot">
+        <p>Project 1 Description</p>
+      </div>
+      <!-- Project 2 -->
+      <div class="project">
+        <img src="project2.jpg" alt="Project 2 Screenshot">
+        <p>Project 2 Description</p>
+      </div>
+      <!-- Add more projects as needed -->
+    </div>
+  </section>
 </body>
 </html>
+

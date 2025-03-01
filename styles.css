@@ -1,0 +1,218 @@
+:root {
+    /* Core colors */
+    --primary-color: #000;
+    --hover-color: #000;
+    --background-color: #fff;
+  
+    /* Spacing variables */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+  
+    /* Project size controls - ADJUST THESE */
+    --project-gap: 100px;           /* Space between projects */
+    --side-padding: 180px;         /* Padding on left/right of page */
+    --header-bottom-margin: 140px;  /* Space between header and projects */
+  
+    /* Project dimensions - ADJUST THESE */
+    --project-min-height: 150px;   /* Minimum project image height */
+    --project-img-scale: 1;        /* Base scale for all project images (1 = 100%) */
+    --project-hover-scale: 1.05;   /* How much images grow on hover */
+  
+    /* Typography - ADJUST THESE */
+    --project-title-size: 17px;    /* Project title font size */
+    --project-title-spacing: 0.5px; /* Letter spacing for titles */
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    font-size: 18px;
+    background-color: var(--background-color);
+    margin-bottom: var(--header-bottom-margin); /* Control space below header */
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-title {
+    font-weight: normal;
+    font-size: 22px;
+    margin-left: var(--spacing-md);
+  }
+  
+  .logo img {
+    width: 50px;
+    height: auto;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  nav a {
+    margin-left: var(--spacing-md);
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover, .site-title a:hover {
+    color: var(--hover-color);
+  }
+  
+  .insta-icon {
+    font-size: 20px;
+    margin-right: var(--spacing-lg);
+  }
+  
+  /* Projects Grid */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--project-gap); /* Adjustable gap between projects */
+    padding: 0 var(--side-padding); /* Adjustable side padding */
+  }
+  
+  .project {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  
+  /* Project image container with adjustable height */
+  .project-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Bottom alignment */
+    background-color: transparent;
+    margin-bottom: var(--spacing-sm);
+    min-height: var(--project-min-height); /* Minimum height, adjust in :root */
+    height: auto;
+  }
+  
+  /* Project link/container */
+  .project-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Project image with adjustable size */
+  .project-img img {
+    max-width: 100%;
+    width: calc(100% * var(--project-img-scale)); /* Adjust image size using --project-img-scale */
+    height: auto;
+    object-fit: contain;
+    object-position: bottom; /* Bottom alignment */
+    transition: transform 0.3s ease;
+    display: block; /* Ensures no extra space below image */
+  }
+  
+  /* Hover effect with customizable scale */
+  .project-img a:hover img {
+    transform: scale(var(--project-hover-scale)); /* Adjustable hover scale */
+  }
+  
+  /* Project title styling */
+  .project p {
+    margin-top: var(--spacing-sm);
+    font-weight: bold;
+    width: 100%;
+    font-size: var(--project-title-size);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: var(--project-title-spacing);
+    text-transform: uppercase;
+  }
+  
+  /* Link styling */
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  
+  .site-title a {
+    transition: color 0.3s ease;
+  }
+  
+  .about-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 50px;
+  }
+  
+  /* Size modifiers for individual projects (optional) */
+  .project.large .project-img {
+    min-height: calc(var(--project-min-height) * 1.5);
+  }
+  
+  .project.medium .project-img {
+    min-height: calc(var(--project-min-height) * 1.2);
+  }
+  
+  .project.small .project-img {
+    min-height: calc(var(--project-min-height) * 0.8);
+  }
+  
+  /* Image size modifiers (optional) */
+  .project-img.img-large img {
+    --project-img-scale: 1.2;
+  }
+  
+  .project-img.img-small img {
+    --project-img-scale: 0.8;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 992px) {
+    :root {
+      --side-padding: 60px; /* Adjusted side padding for tablet */
+    }
+  
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    :root {
+      --side-padding: 30px; /* Adjusted side padding for mobile */
+      --header-bottom-margin: 20px; /* Smaller spacing on mobile */
+    }
+  
+    .projects {
+      grid-template-columns: 1fr;
+    }
+  
+    nav {
+      gap: 20px;
+    }
+  
+    header {
+      padding: 15px;
+    }
+  }
+  

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEIRDCORE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Fixed left navigation */
+        .nav {
+            position: fixed;
+            left: 20px;
+            top: 50px;
+            z-index: 100;
+        }
+
+        .nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            padding: 8px 15px;
+            background: #000;
+            border: 2px solid #fff;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nav a:hover {
+            background: #fff;
+            color: #000;
+            transform: translateX(5px);
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover::before {
+            opacity: 1;
+        }
+
+        /* Content container - centered vertical stack */
+        .content {
+            width: 100%;
+            padding: 120px 20px 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+        }
+
+        /* Video item */
+        .video-item {
+            width: 450px;
+            position: relative;
+        }
+
+        .video-frame {
+            width: 450px;
+            height: 253px;
+            background: #fff;
+            border: 3px solid #fff;
+            box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .video-frame:hover {
+            box-shadow: 12px 12px 0 rgba(255, 255, 255, 0.5);
+            transform: translate(-2px, -2px);
+        }
+
+        .video-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+        }
+
+        .video-title {
+            margin-top: 15px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        .video-title strong {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .video-title p {
+            font-weight: normal;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        /* Alternating layout - more extreme offsets */
+        .video-item:nth-child(1) {
+            align-self: flex-start;
+            margin-left: 200px;
+        }
+
+        .video-item:nth-child(2) {
+            align-self: flex-end;
+            margin-right: 150px;
+        }
+
+        .video-item:nth-child(3) {
+            align-self: flex-start;
+            margin-left: 280px;
+        }
+
+        .video-item:nth-child(4) {
+            align-self: flex-end;
+            margin-right: 220px;
+        }
+
+        .video-item:nth-child(5) {
+            align-self: flex-start;
+            margin-left: 160px;
+        }
+
+        .video-item:nth-child(6) {
+            align-self: flex-end;
+            margin-right: 190px;
+        }
+
+        /* Play overlay */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-frame:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Scanline effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.03),
+                rgba(255, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Noise texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.08"/></svg>');
+            pointer-events: none;
+            z-index: 9998;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#featured">FEATURED</a>
+        <a href="#portfolio">AV PORTFOLIO</a>
+        <a href="#artwork">ARTWORK</a>
+        <a href="#about">ABOUT</a>
+    </nav>
+
+    <div class="content">
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g1'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff'/%3E%3Cstop offset='100%25' style='stop-color:%23000000'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='450' height='253' fill='url(%23g1)'/%3E%3C/svg%3E" alt="ARCA">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>ARCA – LIVE FROM TIJIZ @ CGC FESTIVAL</strong>
+                <p>CLIENT: Hyperdub / ARCA<br>
+                Concept, Design and Production. Roxy Tong. Produced and Physical<br>
+                interaction for CGC Festival. A Hyperdub/ Manuela Sultan</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff'/%3E%3Cstop offset='50%25' style='stop-color:%23666666'/%3E%3Cstop offset='100%25' style='stop-color:%23000000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='450' height='253' fill='url(%23g2)'/%3E%3C/svg%3E" alt="GODDOGS">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>GODDOGS – TRANS-AEON EXPRESS</strong>
+                <p>CLIENT: XL Recordings<br>
+                Video production, post production, visual effects and animation work<br>
+                to be released on BURIAL's records.</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%23000000'/%3E%3Cstop offset='50%25' style='stop-color:%23ffffff'/%3E%3Cstop offset='100%25' style='stop-color:%23000000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='450' height='253' fill='url(%23g3)'/%3E%3C/svg%3E" alt="YAEJI">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>YAEJI – PACIFIVE</strong>
+                <p>CLIENT: XL/Pacifive<br>
+                Video: Yaeji, Bagosse and videography by Yaeji/ Nick<br>
+                Design produced by WEIRDCORE</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g4'%3E%3Cstop offset='0%25' style='stop-color:%23000000'/%3E%3Cstop offset='100%25' style='stop-color:%23ffffff'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='450' height='253' fill='url(%23g4)'/%3E%3C/svg%3E" alt="Project">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>APHEX TWIN – LIVE VISUALS</strong>
+                <p>CLIENT: Warp Records<br>
+                Real-time visual generation and live performance systems<br>
+                Custom hardware and software development</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g5' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff'/%3E%3Cstop offset='100%25' style='stop-color:%23333333'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='450' height='253' fill='url(%23g5)'/%3E%3C/svg%3E" alt="Project">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>M.I.A. – VISUAL DIRECTION</strong>
+                <p>CLIENT: Interscope Records<br>
+                Tour visuals, music video direction and post-production<br>
+                Multi-channel video installation work</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <div class="video-frame">
+                <img src="data:image/svg+xml,%3Csvg width='450' height='253' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='450' height='253' fill='%23ffffff'/%3E%3Crect x='100' y='50' width='250' height='153' fill='%23000000'/%3E%3C/svg%3E" alt="Project">
+                <div class="play-overlay">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+            <div class="video-title">
+                <strong>ONEOHTRIX POINT NEVER – INSTALLATION</strong>
+                <p>CLIENT: Warp Records<br>
+                Visual research, editing and post production<br>
+                Experimental electronic music visualization</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.video-frame').forEach(frame => {
+            frame.addEventListener('click', () => {
+                console.log('Video clicked');
+            });
+        });
+    </script>
+</body>
+</html>

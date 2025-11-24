@@ -1,106 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="HELLO.MONKS - Visual arts and design portfolio" />
-    <title>HELLO.MONKS</title>
 
-    <!-- favicon -->
-    <link rel="icon" href="Imagens/ying yang.png" type="image/x-icon" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEIRDCORE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <div class="logo">
-          <img src="Imagens/smoking.png" alt="Hello Monks Logo" class="mini-logo" />
-        </div>
-        <div class="site-title">
-          <a href="index.html">HELLO.MONKS</a>
-        </div>
-      </div>
-      <nav>
-        <a href="about.html">ABOUT</a>
-        <a
-          href="https://www.instagram.com/hello.mnks/"
-          target="_blank"
-          class="insta-icon"
-          aria-label="Instagram"
-        >
-          <i class="fab fa-instagram"></i>
+<body>
+    <div class="branding">
+        <a href="index.html">
+            <img src="img/logo/logo_optimized.png" alt="hello.mnks">
         </a>
-      </nav>
-    </header>
+    </div>
+    <nav class="nav">
+        <a href="index.html" class="active">FEATURED</a>
+        <a href="portfolio.html">GALLERY</a>
+        <a href="artwork.html">ALL WORKS</a>
+        <a href="about.html">ABOUT</a>
+    </nav>
 
-    <main>
-      <div class="projects">
-        <div class="project">
-          <div class="project-img">
-            <a href="submerso.html">
-              <img
-                src="Imagens/PR_2024_D_SUBMERSO_240928_42.jpg"
-                alt="Videomapping Submerso"
-              />
+    <div class="content">
+        <!-- Project 1: Submerso -->
+        <div class="video-item">
+            <a href="projects/submerso.html">
+                <div class="video-frame">
+                    <img src="img/submerso/submerso_cover_optimized.png" alt="Submerso">
+                    <div class="play-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
             </a>
-          </div>
-          <p>Video Mapping Submerso</p>
+            <div class="video-title">
+                <strong>Submerso Submerso Video Mapping</strong>
+                <p>Visual mapping project.</p>
+            </div>
         </div>
-        <div class="project">
-          <div class="project-img">
-            <a href="vibra.html">
-              <img src="Imagens/vibra.jpeg" alt="Vibra Visuals" />
-            </a>
-          </div>
-          <p>Vibra Visuals</p>
-        </div>
-        <div class="project">
-          <div class="project-img">
-            <a href="sax.html">
-              <img src="Imagens/sax.png" alt="SUI - TMLT" />
-            </a>
-          </div>
-          <p>Sax in the BOX - Videoclip</p>
-        </div>
-        <div class="project">
-          <div class="project-img">
-            <a href="#">
-              <img src="Imagens/project3.jpg" alt="INTERNÜS FW24" />
-            </a>
-          </div>
-          <p>INTERNÜS FW24</p>
-        </div>
-        <div class="project">
-          <div class="project-img">
-            <a href="#">
-              <img src="Imagens/project4.jpg" alt="Red Devils" />
-            </a>
-          </div>
-          <p>red devils</p>
-        </div>
-      </div>
-    </main>
 
-    <!-- Bootstrap Bundle JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        <!-- Project 2: Vibra -->
+        <div class="video-item">
+            <a href="projects/vibra.html">
+                <div class="video-frame">
+                    <img src="img/vibra/vibra cover.jpg" alt="Vibra">
+                    <div class="play-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+            </a>
+            <div class="video-title">
+                <strong>vibra visuals</strong>
+                <p>Visuals and projection.</p>
+            </div>
+        </div>
+
+        <!-- Project 3: Sax -->
+        <div class="video-item">
+            <a href="projects/sax.html">
+                <div class="video-frame">
+                    <img src="img/sax/sax cover.jpg" alt="Sax">
+                    <div class="play-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+            </a>
+            <div class="video-title">
+                <strong>Sax In the Box</strong>
+                <p>Music video production.</p>
+            </div>
+        </div>
+
+        <!-- Project 4: Blank -->
+        <div class="video-item">
+            <div class="video-frame" style="background: #111; border-color: #333; cursor: default;">
+                <!-- Blank -->
+            </div>
+            <div class="video-title">
+                <strong>COMING SOON</strong>
+                <p>Future project slot.</p>
+            </div>
+        </div>
+
+        <!-- Project 5: Blank -->
+        <div class="video-item">
+            <div class="video-frame" style="background: #111; border-color: #333; cursor: default;">
+                <!-- Blank -->
+            </div>
+            <div class="video-title">
+                <strong>COMING SOON</strong>
+                <p>Future project slot.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

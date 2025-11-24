@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HELLO.MONKS</title>
 
-    <!-- favicon -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEIRDCORE - About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
 
-    <link rel="icon" href="Imagens/ying yang.png" type="image/x-icon" />
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <div class="logo">
-          <img src="Imagens/smoking.png" alt="Logo" class="mini-logo" />
-        </div>
-        <div class="site-title">
-          <a href="index.html">HELLO.MONKS</a>
-        </div>
-      </div>
-      <nav>
-        <a href="about.html">ABOUT</a>
-        <a href="https://www.instagram.com/hello.mnks/" target="_blank" class="insta-icon">
-          <i class="fab fa-instagram"></i>
+<body>
+    <div class="branding">
+        <a href="index.html">
+            <img src="img/logo/logo_optimized.png" alt="hello.mnks">
         </a>
-      </nav>
-    </header>
+    </div>
+    <nav class="nav">
+        <a href="index.html">FEATURED</a>
+        <a href="portfolio.html">GALLERY</a>
+        <a href="artwork.html">ALL WORKS</a>
+        <a href="about.html" class="active">ABOUT</a>
+    </nav>
 
-    <main>
-        <div class="about-text">
-          <p>¡Welcome!</p>
-          <br>Born and raised in Araraquara, Sao Paulo - Brazil,</br>
-          <br>I am producer, art/music researcher and video artist currently based in Sao Paulo.</br>
-          <br>I make video mapping shows, VJ sets and videoclips,</br>
-          <br>as well as any other cool technological artsy shit you can imagine.</br>
-          <br>Feel free to contact me at vjmonks203@gmail.com or message me via IG.</br>
+    <div class="content">
+        <div class="video-item" style="width: 100%; align-self: center;">
+            <div class="video-title" style="text-align: center;">
+                <strong>hello.mnks</strong>
+                <p>Visual artist and director based in Brazil.</p>
+                <p>Specializing in creating unique visual identities for musicians and brands.</p>
+                <p>Working with video mapping, live visuals, music videos, and digital art.</p>
 
+                <div class="social-links">
+                    <a href="https://www.instagram.com/monks.hello/" target="_blank" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" />
+                            <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2" />
+                            <circle cx="18" cy="6" r="1" fill="white" />
+                        </svg>
+                    </a>
+
+                    <a href="https://youtu.be/8AhCRqzEsyY?si=uxpo6no8nX6hpdaF" target="_blank" class="social-link">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2" />
+                            <path d="M10 9L15 12L10 15V9Z" fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-      </main>
+    </div>
+</body>
+
+</html>
